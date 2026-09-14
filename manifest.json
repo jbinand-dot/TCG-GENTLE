@@ -7,12 +7,12 @@
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "M8PatchWhite.ico",
+      "src": "img/M8PatchWhite.ico",
       "sizes": "192x192",
       "type": "image/x-icon"
     },
     {
-      "src": "M8PatchWhite.ico",
+      "src": "img/M8PatchWhite.ico",
       "sizes": "512x512",
       "type": "image/x-icon"
     }
