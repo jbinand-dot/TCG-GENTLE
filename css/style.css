@@ -1,0 +1,189 @@
+body {
+    user-select: none;
+    -webkit-user-select: none; /* Chrome, Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Ancien Edge */
+    font-family: "Anta", sans-serif;
+    font-style: normal;
+}
+.card-select {
+    position: relative;
+    cursor: pointer;
+}
+.card-select .card-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(25, 135, 84, 0.55); /* vert bootstrap "success" */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+.card-select .card-overlay i {
+    font-size: 2.5rem;
+    color: #fff;
+}
+.card-select input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 2;
+}
+.card-select.checked .card-overlay {
+    opacity: 1;
+}
+.card-select.checked .card {
+    border: 2px solid #198754;
+}
+
+/* ===== Thème SOMBRE (Luxray) — appliqué par défaut ===== */
+:root {
+  --theme-fond: #0a1a2f;          /* fond, bleu nuit très sombre */
+  --theme-carte: #16335c;         /* bleu du pelage */
+  --theme-accent: #10101a;        /* rayures noires */
+  --theme-jaune: #f4c60f;         /* éclair / accents électriques */
+  --theme-jaune-clair: #ffe066;   /* survol / highlight */
+  --theme-texte: #f5f5f5;         /* texte clair sur fond sombre */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* ===== Thème CLAIR (Lixy) — activé via body.light-theme ===== */
+body.light-theme {
+  --theme-fond: #cdeaf9;          /* bleu ciel clair */
+  --theme-carte: #7ec8ea;         /* bleu moyen (pelage Lixy) */
+  --theme-accent: #16335c;        /* bleu foncé pour les bordures/accents */
+  --theme-jaune: #e0ac00;         /* jaune un peu plus foncé pour rester lisible sur clair */
+  --theme-jaune-clair: #ffd94a;
+  --theme-texte: #10101a;         /* texte foncé sur fond clair */
+}
+
+/* ===== Fond général ===== */
+body {
+  background-color: var(--theme-fond);
+  color: var(--theme-texte);
+  min-height: 100vh;
+}
+
+/* ===== En-tête ===== */
+header h1 {
+  color: var(--theme-jaune);
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(244, 198, 15, 0.4);
+  padding-top: 1rem;
+}
+
+/* ===== Navigation (onglets) ===== */
+.nav-tabs {
+  border-bottom: 2px solid var(--theme-jaune);
+  justify-content: center;
+}
+
+.nav-tabs .nav-link {
+  color: var(--theme-texte);
+  background-color: var(--theme-carte);
+  border: 1px solid var(--theme-accent);
+  border-bottom: none;
+  margin: 0 2px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: var(--theme-jaune-clair);
+  color: var(--theme-accent);
+}
+
+.nav-tabs .nav-link.active {
+  background-color: var(--theme-jaune);
+  color: var(--theme-accent);
+  font-weight: bold;
+  border-color: var(--theme-jaune);
+}
+
+/* ===== Compteurs "Trouvé / Manquant" ===== */
+#card-counter-found {
+  color: var(--theme-jaune);
+  font-weight: bold;
+}
+
+#card-counter-missing {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* ===== Cartes ===== */
+.card {
+  background-color: var(--theme-carte);
+  color: var(--theme-texte);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-text {
+  color: var(--theme-texte);
+}
+
+/* ===== Pied de page ===== */
+footer {
+  color: var(--theme-texte);
+  opacity: 0.7;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ===== Interrupteur thème clair/sombre (haut à droite) ===== */
+.theme-toggle {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--theme-carte);
+  padding: 6px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle i {
+  color: var(--theme-jaune);
+  font-size: 1rem;
+}
+
+.theme-toggle .form-check-input {
+  cursor: pointer;
+}
+
+.theme-toggle .form-check-input:checked {
+  background-color: var(--theme-jaune);
+  border-color: var(--theme-jaune);
+}
+@media (max-width: 576px) {
+  .title-part {
+    display: block;
+  }
+
+  .theme-toggle {
+    padding: 4px 8px;
+    gap: 4px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .theme-toggle i {
+    font-size: 0.8rem;
+  }
+
+  .theme-toggle .form-check-input {
+    width: 1.8em;
+    height: 1em;
+  }
+}
