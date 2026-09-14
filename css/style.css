@@ -63,6 +63,10 @@ body.light-theme {
   --theme-jaune-clair: #9fd23a;
   --theme-texte: #1a1033;         /* texte foncé violet nuit */
 }
+.header-logo {
+  height: 88px;   /* ajuste selon la hauteur souhaitée */
+  width: auto;    /* garde les proportions */
+}
 
 /* ===== Fond général ===== */
 body {
