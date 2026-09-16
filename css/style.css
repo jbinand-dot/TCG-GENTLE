@@ -43,6 +43,21 @@ body {
     border: 2px solid #198754;
 }
 
+.team-row {
+  flex-wrap: nowrap;
+}
+
+.team-row img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.box-gal{
+  border-radius: 12px;
+  background: #b8a4e0
+}
+
 /* ===== Thème SOMBRE (inspiré du ciel nocturne violet) — appliqué par défaut ===== */
 :root {
   --theme-fond: #1a1033;          /* fond, violet nuit très sombre */
