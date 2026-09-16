@@ -3,7 +3,8 @@ body {
     -webkit-user-select: none; /* Chrome, Safari */
     -moz-user-select: none;    /* Firefox */
     -ms-user-select: none;     /* Ancien Edge */
-    font-family: "Anta", sans-serif;
+    font-family: "Kings", cursive;
+    font-weight: 400;
     font-style: normal;
 }
 .card-select {
