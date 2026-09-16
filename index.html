@@ -92,17 +92,26 @@
       </div>
     </main>
     <footer>
-      <div class="row g-0">
-        <div class="col-6">
-          <img src="img/logo-bw.svg" alt="">
-        </div>
-        <div class="col-6 text-center">
-          Mentions légales :
-          <br>
-          Ce site est à usage strictement personnel et non commercial. Il a été créé à titre de projet privé, sans but lucratif.
-Certaines images présentes sur ce site ne m'appartiennent pas. Elles restent la propriété de leurs auteurs ou ayants droit respectifs et sont utilisées ici à titre illustratif uniquement. Si vous êtes le propriétaire d'une image publiée sur ce site et que vous souhaitez qu'elle soit retirée, merci de me contacter et j'y procéderai dans les plus brefs délais.
-        </div>
-      </div>
-    </footer>
+  <div class="row g-0 align-items-center">
+    <div class="col-6">
+      <img src="img/logo-bw.svg" alt="" class="img-fluid">
+    </div>
+    <div class="col-6 text-center">
+      <strong>Mentions légales :</strong>
+      <br>
+
+      <!-- Version courte, visible uniquement sur mobile -->
+      <span class="d-inline d-md-none small">
+        Site personnel, sans but commercial. Certaines images ne m'appartiennent pas et restent la propriété de leurs auteurs respectifs.
+      </span>
+
+      <!-- Version complète, visible à partir de tablette/desktop -->
+      <span class="d-none d-md-inline">
+        Ce site est à usage strictement personnel et non commercial. Il a été créé à titre de projet privé, sans but lucratif.
+        Certaines images présentes sur ce site ne m'appartiennent pas. Elles restent la propriété de leurs auteurs ou ayants droit respectifs et sont utilisées ici à titre illustratif uniquement. Si vous êtes le propriétaire d'une image publiée sur ce site et que vous souhaitez qu'elle soit retirée, merci de me contacter et j'y procéderai dans les plus brefs délais.
+      </span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
