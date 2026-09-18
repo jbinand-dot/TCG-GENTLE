@@ -186,6 +186,64 @@ footer {
   background-color: var(--theme-jaune);
   border-color: var(--theme-jaune);
 }
+
+/* Fond de la carte agrandie */
+.card-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* Modal ouverte */
+.card-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Grande carte */
+.card-modal img {
+    max-width: 85vw;
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+}
+
+/* Animation d'agrandissement */
+.card-modal.active img {
+    transform: scale(1);
+}
+
+/* Bouton X */
+.card-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+
+    font-size: 40px;
+    color: white;
+
+    cursor: pointer;
+    line-height: 1;
+
+    z-index: 10000;
+}
 @media (max-width: 576px) {
   .title-part {
     display: block;

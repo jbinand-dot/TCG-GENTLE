@@ -106,3 +106,64 @@ document.addEventListener("DOMContentLoaded", () => {
   // Affiche le compteur dès le chargement de la page
   updateCounter(total);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Création de la fenêtre d'affichage
+    const modal = document.createElement("div");
+    modal.className = "card-modal";
+
+    modal.innerHTML = `
+        <span class="card-modal-close">&times;</span>
+        <img src="" alt="">
+    `;
+
+    document.body.appendChild(modal);
+
+    const modalImage = modal.querySelector("img");
+    const closeButton = modal.querySelector(".card-modal-close");
+
+    // Toutes les cartes
+    document.querySelectorAll(".card-select").forEach(card => {
+
+        card.addEventListener("click", () => {
+
+            const image = card.querySelector("img");
+
+            if (!image) return;
+
+            // On récupère l'image de la carte
+            modalImage.src = image.src;
+            modalImage.alt = image.alt;
+
+            // Affichage
+            modal.classList.add("active");
+
+            // Empêche le défilement de la page derrière
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    // Fermer avec le X
+    closeButton.addEventListener("click", closeModal);
+
+    // Fermer en cliquant sur le fond
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Fermer avec Échap
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeModal();
+        }
+    });
+
+    function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+});
