@@ -81,6 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const id = card.dataset.id;
     const checkbox = card.querySelector(".card-checkbox");
 
+    // Sur les pages sans checkbox (ex: index.html), on ne gère pas la sélection
+    if (!checkbox) return;
+
     // Restaure l'état sauvegardé au chargement de la page
     if (stored[id]) {
       setCardState(card, true);
@@ -108,6 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    // La modale n'existe que sur les pages qui le demandent (index.html)
+    if (document.body.dataset.modal !== "true") return;
 
     // Création de la fenêtre d'affichage
     const modal = document.createElement("div");
