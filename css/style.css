@@ -186,6 +186,57 @@ footer {
   background-color: var(--theme-jaune);
   border-color: var(--theme-jaune);
 }
+.card-select input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100% - 3.4rem); /* laisse libre la bande du nom + bouton */
+  margin: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+/* ===== Bouton "+" galerie ===== */
+.btn-add-gallery {
+  position: relative;
+  z-index: 3; /* au-dessus de la case à cocher et de l'overlay */
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-left: .4rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--theme-jaune);
+  background-color: var(--theme-fond);
+  border: 2px solid var(--theme-jaune);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color .15s, color .15s, transform .15s, box-shadow .15s;
+}
+
+.btn-add-gallery:hover {
+  background-color: var(--theme-jaune-clair);
+  border-color: var(--theme-jaune-clair);
+  color: var(--theme-accent);
+  transform: scale(1.12);
+  box-shadow: 0 0 8px rgba(159, 210, 58, 0.5);
+}
+
+.btn-add-gallery:active {
+  transform: scale(0.95);
+}
+
+/* Carte déjà dans la galerie */
+.btn-add-gallery.added {
+  background-color: var(--theme-jaune);
+  border-color: var(--theme-jaune);
+  color: var(--theme-accent);
+}
 
 @media (max-width: 576px) {
   .title-part {
